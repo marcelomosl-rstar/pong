@@ -27,5 +27,5 @@ This is a simple implementation of the classic Pong game using Lua programming l
 
 2. **Start the game:**
 
-     ```bash
+```bash
   cd pong && love .
