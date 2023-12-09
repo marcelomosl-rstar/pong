@@ -24,3 +24,8 @@ This is a simple implementation of the classic Pong game using Lua programming l
 
    ```bash
    git clone https://github.com/your-username/pong-game.git
+
+2. **Start the game:**
+
+     ```bash
+  cd pong && love .
