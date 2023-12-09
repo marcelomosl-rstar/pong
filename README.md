@@ -4,7 +4,7 @@
 
 This is a simple implementation of the classic Pong game using Lua programming language and Love2D game framework.
 
-![Pong Game](pong_screenshot.png)
+![Pong Game](https://i.imgur.com/pUO49ya.png)
 
 ## Features
 
