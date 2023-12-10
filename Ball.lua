@@ -12,6 +12,18 @@ function Ball:init(xAxis, yAxis, width, height)
     self.dx = math.random(-50, 50)
 end
 
+function Ball:collides(paddle)
+    if self.xAxis > paddle.xAxis+ paddle.width or paddle.xAxis > self.xAxis + self.width then
+        return false
+    end
+
+    if self.yAxis > paddle.yAxis + paddle.height or paddle.yAxis > self.yAxis + self.height then
+        return false
+    end
+
+    return true
+end
+
 
 function Ball:reset()
     self.xAxis = VIRTUAL_WIDTH / 2 - 2
