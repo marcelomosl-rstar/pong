@@ -44,8 +44,8 @@ function love.load()
     -- })
 
 
-    player1Score = 9
-    player2Score = 9
+    player1Score = 0
+    player2Score = 0
 
 
     servingPlayer = 1
@@ -148,13 +148,13 @@ function love.update(dt)
         else
             ball.dx = -math.random(140, 200)
         end
-    end    
+    end
 
     player1:update(dt)
     player2:update(dt)
 end
 
-local enterPressed = false
+local mPressed = false
 
 function love.keypressed(key)
     if key == 'escape' then
@@ -165,19 +165,20 @@ function love.keypressed(key)
         elseif gameState == 'serve' then
             gameState = 'play'
         elseif gameState == 'done' then
-
             if player1Score == 10 then
-            servingPlayer = 1
+                servingPlayer = 1
             else
-            servingPlayer = 2
+                servingPlayer = 2
             end
 
             player1Score = 0
             player2Score = 0
 
-            
+
             gameState = 'serve'
         end
+    elseif key == 'm' then
+        mPressed = not mPressed
     end
 end
 
@@ -186,7 +187,7 @@ function love.draw()
 
     love.graphics.clear(40 / 255, 45 / 255, 52 / 255, 255 / 255)
 
-    if enterPressed then
+    if mPressed then
         love.graphics.setFont(retroSmallFont)
         love.graphics.printf("Marcelo Mosl",
             0,
